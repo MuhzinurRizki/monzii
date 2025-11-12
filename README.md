@@ -1,127 +1,100 @@
-# 💰 MonZii — Personal Money Tracker Web App
+🐷 MonZii — Smart Money Tracker for a Smarter You
 
-**MonZii** adalah aplikasi manajemen keuangan berbasis web yang membantu pengguna mengelola pemasukan, pengeluaran, dan kategori keuangan dengan akun pribadi masing-masing.
+MonZii adalah aplikasi manajemen keuangan pribadi berbasis web yang membantu kamu mencatat pengeluaran, mengatur anggaran, dan mencapai tujuan finansial dengan mudah.
+Didesain dengan antarmuka modern, aman, dan dapat digunakan oleh banyak pengguna dengan akun masing-masing.
 
-Dibangun menggunakan **Next.js 14 (App Router)** dengan **Prisma ORM** dan **MySQL**, MonZii dirancang untuk scalability, keamanan, dan performa optimal di sisi client maupun server.
+🚀 Tech Stack
 
----
+MonZii dibangun dengan teknologi modern yang scalable dan efisien:
 
-## 🚀 Tech Stack
+Layer	Technology
+Frontend	Next.js 14
+ + React 18
 
-| Layer | Teknologi |
-|-------|------------|
-| **Frontend** | Next.js 14, TypeScript, Tailwind CSS, Shadcn/UI |
-| **Backend** | Next.js API Routes, NextAuth.js, Prisma ORM |
-| **Database** | MySQL (XAMPP / PlanetScale / Supabase MySQL) |
-| **Auth** | NextAuth (Email + Password via Credentials Provider) |
-| **Icons & UI** | Lucide React, Shadcn/UI Components |
+UI/UX	Tailwind CSS
+ + shadcn/ui
+ + Framer Motion
 
----
+Backend / ORM	Prisma
 
-## 📂 Project Structure
+Database	MySQL (XAMPP)
+ atau Supabase (PostgreSQL)
 
-monzii/
-│
-├── prisma/ # Schema & migrations
-│ ├── schema.prisma
-│ └── prisma.config.ts
-│
-├── src/
-│ ├── app/
-│ │ ├── api/
-│ │ │ ├── auth/[...nextauth]/route.ts # NextAuth handler
-│ │ │ └── register/route.ts # User registration API
-│ │ ├── (auth)/ # Login & register pages
-│ │ ├── (dashboard)/ # User dashboard (coming soon)
-│ │ └── layout.tsx / page.tsx
-│ │
-│ ├── components/ # Shared UI components
-│ ├── lib/ # Prisma client, utils, helpers
-│ └── styles/ # Tailwind base styles
-│
-├── .env.example
-├── package.json
-└── README.md
+Auth (Planned)	NextAuth.js
 
+Deployment	Vercel
+💡 Fitur Utama (Planned & Implemented)
 
----
+✅ Dashboard pribadi untuk mencatat dan memantau transaksi
 
-## ⚙️ Setup Local Development
+✅ Klasifikasi pengeluaran (kategori otomatis/manual)
 
-### 1️⃣ Clone Repository
-```bash
+✅ Sistem login multi-user
+
+✅ Tampilan responsive dan interaktif
+
+🚧 Statistik visual (chart pendapatan vs pengeluaran)
+
+🚧 Reminder dan goal tracking
+
+🚧 Integrasi dengan email / newsletter
+
+⚙️ Instalasi & Setup Lokal
+1. Clone repositori
 git clone https://github.com/<username>/monzii.git
 cd monzii
 
-2️⃣ Install Dependencies
+2. Install dependencies
 npm install
 
-3️⃣ Setup Database
+3. Setup environment
 
-Pastikan MySQL (misalnya XAMPP) sedang berjalan, lalu buat database baru bernama monzii.
-
-Edit file .env:
+Buat file .env di root folder:
 
 DATABASE_URL="mysql://root:@localhost:3306/monzii"
-NEXTAUTH_SECRET="your_secret_key"
-NEXTAUTH_URL="http://localhost:3000"
 
-4️⃣ Prisma Setup
-npx prisma generate
+4. Inisialisasi Prisma
 npx prisma migrate dev --name init
 
-5️⃣ Jalankan Development Server
+5. Jalankan aplikasi
 npm run dev
 
 
 Akses di: http://localhost:3000
 
-🔐 Fitur Utama (Current)
+🧭 Roadmap
 
-✅ Register & Login User (NextAuth Credentials)
+ Landing page lengkap (Hero, Features, Pricing, FAQ, Newsletter)
 
-✅ Prisma ORM dengan MySQL
+ Animasi masuk menggunakan Framer Motion
 
-✅ Protected API Routes & Sessions
+ Sistem login & autentikasi user
 
-✅ Basic UI (Tailwind + Shadcn)
+ Dashboard user dengan CRUD transaksi
 
-✅ Schema User dan Transaction
+ Laporan dan analitik keuangan
 
-🧭 Roadmap (Coming Soon)
+ Integrasi API publik (mis. nilai tukar atau harga emas)
 
-📊 Dashboard keuangan pribadi
+🤝 Kontribusi
 
-🧾 Filter & kategori transaksi
+Kami membuka kontribusi dari komunitas untuk pengembangan MonZii.
+Jika ingin ikut berkontribusi:
 
-💡 Analitik & visualisasi keuangan
+Fork repositori ini
 
-☁️ Deployment ke Vercel dengan DB remote (PlanetScale)
+Buat branch baru: feature/nama-fitur
 
-📱 Responsive layout untuk mobile users
+Commit perubahan:
 
-🧑‍💻 Kontributor
-Nama	Peran
-Muhzinur Rizki	Founder & Fullstack Developer
-⚖️ License
-
-Project ini dirilis di bawah lisensi MIT.
-Kamu bebas memodifikasi, menyalin, dan menggunakan MonZii untuk keperluan pribadi maupun komersial.
-
-💬 MonZii – Smart Money, Simple Control.
+git commit -m "feat: add [nama fitur]"
 
 
----
+Push ke branch dan buat Pull Request
 
-## ✅ Langkah Setelah Ini
-1. Buat file di project kamu:
+🧑‍💻 Tim & Lisensi
 
+Dikembangkan oleh Muhzinur Rizki
+Lisensi: MIT License
 
-D:\ALL-PROJECT\monzii\README.md
-
-2. Paste isi di atas  
-3. Commit ke Git:
-```bash
-git add README.md
-git commit -m "docs: add professional README for MonZii project"
-git push
+“Atur uangmu dengan cerdas, biar uangmu nggak ngatur kamu.” — MonZii Team

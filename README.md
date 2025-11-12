@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💰 MonZii — Personal Money Tracker Web App
 
-## Getting Started
+**MonZii** adalah aplikasi manajemen keuangan berbasis web yang membantu pengguna mengelola pemasukan, pengeluaran, dan kategori keuangan dengan akun pribadi masing-masing.
 
-First, run the development server:
+Dibangun menggunakan **Next.js 14 (App Router)** dengan **Prisma ORM** dan **MySQL**, MonZii dirancang untuk scalability, keamanan, dan performa optimal di sisi client maupun server.
 
+---
+
+## 🚀 Tech Stack
+
+| Layer | Teknologi |
+|-------|------------|
+| **Frontend** | Next.js 14, TypeScript, Tailwind CSS, Shadcn/UI |
+| **Backend** | Next.js API Routes, NextAuth.js, Prisma ORM |
+| **Database** | MySQL (XAMPP / PlanetScale / Supabase MySQL) |
+| **Auth** | NextAuth (Email + Password via Credentials Provider) |
+| **Icons & UI** | Lucide React, Shadcn/UI Components |
+
+---
+
+## 📂 Project Structure
+
+monzii/
+│
+├── prisma/ # Schema & migrations
+│ ├── schema.prisma
+│ └── prisma.config.ts
+│
+├── src/
+│ ├── app/
+│ │ ├── api/
+│ │ │ ├── auth/[...nextauth]/route.ts # NextAuth handler
+│ │ │ └── register/route.ts # User registration API
+│ │ ├── (auth)/ # Login & register pages
+│ │ ├── (dashboard)/ # User dashboard (coming soon)
+│ │ └── layout.tsx / page.tsx
+│ │
+│ ├── components/ # Shared UI components
+│ ├── lib/ # Prisma client, utils, helpers
+│ └── styles/ # Tailwind base styles
+│
+├── .env.example
+├── package.json
+└── README.md
+
+
+---
+
+## ⚙️ Setup Local Development
+
+### 1️⃣ Clone Repository
 ```bash
+git clone https://github.com/<username>/monzii.git
+cd monzii
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Setup Database
+
+Pastikan MySQL (misalnya XAMPP) sedang berjalan, lalu buat database baru bernama monzii.
+
+Edit file .env:
+
+DATABASE_URL="mysql://root:@localhost:3306/monzii"
+NEXTAUTH_SECRET="your_secret_key"
+NEXTAUTH_URL="http://localhost:3000"
+
+4️⃣ Prisma Setup
+npx prisma generate
+npx prisma migrate dev --name init
+
+5️⃣ Jalankan Development Server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Akses di: http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔐 Fitur Utama (Current)
 
-## Learn More
+✅ Register & Login User (NextAuth Credentials)
 
-To learn more about Next.js, take a look at the following resources:
+✅ Prisma ORM dengan MySQL
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+✅ Protected API Routes & Sessions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+✅ Basic UI (Tailwind + Shadcn)
 
-## Deploy on Vercel
+✅ Schema User dan Transaction
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🧭 Roadmap (Coming Soon)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📊 Dashboard keuangan pribadi
+
+🧾 Filter & kategori transaksi
+
+💡 Analitik & visualisasi keuangan
+
+☁️ Deployment ke Vercel dengan DB remote (PlanetScale)
+
+📱 Responsive layout untuk mobile users
+
+🧑‍💻 Kontributor
+Nama	Peran
+Muhzinur Rizki	Founder & Fullstack Developer
+⚖️ License
+
+Project ini dirilis di bawah lisensi MIT.
+Kamu bebas memodifikasi, menyalin, dan menggunakan MonZii untuk keperluan pribadi maupun komersial.
+
+💬 MonZii – Smart Money, Simple Control.
+
+
+---
+
+## ✅ Langkah Setelah Ini
+1. Buat file di project kamu:
+
+
+D:\ALL-PROJECT\monzii\README.md
+
+2. Paste isi di atas  
+3. Commit ke Git:
+```bash
+git add README.md
+git commit -m "docs: add professional README for MonZii project"
+git push
